@@ -8,7 +8,23 @@ def mostrar_menu():
     print("3. Buscar Gastos por Placa")
     print("4. Salir")
 
-
+def registrar_gasto():
+    print("\n--- REGISTRO DE GASTO ---")
+    placa = input("Ingrese la placa del vehículo: ").upper()
+    concepto = input("Concepto (Gasolina, Peaje, etc.): ")
+    try:
+        valor = float(input("Ingrese el valor del gasto: "))
+        
+        nuevo_gasto = {
+            "placa": placa,
+            "concepto": concepto,
+            "valor": valor
+        }
+        
+        gastos.append(nuevo_gasto)
+        print("¡Gasto registrado con éxito!")
+    except ValueError:
+        print("Error: El valor debe ser un número.")
 
 
 
