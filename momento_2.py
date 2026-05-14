@@ -20,6 +20,7 @@ def buscar_por_placa():
     
     if not encontrado:
         print(f"No se encontraron gastos para la placa {placa_buscada}.")
+
 def mostrar_resumen():
     print("\n--- RESUMEN TOTAL DE GASTOS ---")
     total = 0
@@ -32,6 +33,7 @@ def mostrar_resumen():
         print(f"Vehículo: {gasto['placa']} | Concepto: {gasto['concepto']} | Valor: ${gasto['valor']}")
     
     print(f"\nGASTO TOTAL ACUMULADO: ${total}")
+
 def registrar_gasto():
     print("\n--- REGISTRO DE GASTO ---")
     placa = input("Ingrese la placa del vehículo: ").upper()
@@ -50,8 +52,6 @@ def registrar_gasto():
     except ValueError:
         print("Error: El valor debe ser un número.")
 
-
-
 def main():
     while True:
         mostrar_menu()
@@ -69,6 +69,6 @@ def main():
         else:
             print("Opción no válida.")
 
-# --- ESTA LÍNEA ES LA QUE ACTIVA TODO EL PROGRAMA ---
+# --- ESTA LÍNEA ES LA QUE ACTIVA EL PROGRAMA ---
 if __name__ == "__main__":
     main()
