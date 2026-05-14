@@ -8,6 +8,18 @@ def mostrar_menu():
     print("3. Buscar Gastos por Placa")
     print("4. Salir")
 
+def buscar_por_placa():
+    print("\n--- BÚSQUEDA POR PLACA ---")
+    placa_buscada = input("Ingrese la placa a buscar: ").upper()
+    encontrado = False
+
+    for gasto in gastos:
+        if gasto["placa"] == placa_buscada:
+            print(f"- {gasto['concepto']}: ${gasto['valor']}")
+            encontrado = True
+    
+    if not encontrado:
+        print(f"No se encontraron gastos para la placa {placa_buscada}.")
 def mostrar_resumen():
     print("\n--- RESUMEN TOTAL DE GASTOS ---")
     total = 0
