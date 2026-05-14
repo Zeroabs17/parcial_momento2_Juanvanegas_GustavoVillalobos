@@ -8,25 +8,18 @@ def mostrar_menu():
     print("3. Buscar Gastos por Placa")
     print("4. Salir")
 
-def registrar_gasto():
-    print("\n--- REGISTRO DE GASTO ---")
-    placa = input("Ingrese la placa del vehículo: ").upper()
-    concepto = input("Concepto (Gasolina, Peaje, etc.): ")
-    try:
-        valor = float(input("Ingrese el valor del gasto: "))
-        
-        nuevo_gasto = {
-            "placa": placa,
-            "concepto": concepto,
-            "valor": valor
-        }
-        
-        gastos.append(nuevo_gasto)
-        print("¡Gasto registrado con éxito!")
-    except ValueError:
-        print("Error: El valor debe ser un número.")
+def buscar_por_placa():
+    print("\n--- BÚSQUEDA POR PLACA ---")
+    placa_buscada = input("Ingrese la placa a buscar: ").upper()
+    encontrado = False
 
-
+    for gasto in gastos:
+        if gasto["placa"] == placa_buscada:
+            print(f"- {gasto['concepto']}: ${gasto['valor']}")
+            encontrado = True
+    
+    if not encontrado:
+        print(f"No se encontraron gastos para la placa {placa_buscada}.")
 
 def main():
     while True:
