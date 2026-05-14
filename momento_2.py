@@ -8,6 +8,18 @@ def mostrar_menu():
     print("3. Buscar Gastos por Placa")
     print("4. Salir")
 
+def mostrar_resumen():
+    print("\n--- RESUMEN TOTAL DE GASTOS ---")
+    total = 0
+    if not gastos:
+        print("No hay gastos registrados.")
+        return
+
+    for gasto in gastos:
+        total += gasto["valor"]
+        print(f"Vehículo: {gasto['placa']} | Concepto: {gasto['concepto']} | Valor: ${gasto['valor']}")
+    
+    print(f"\nGASTO TOTAL ACUMULADO: ${total}")
 def registrar_gasto():
     print("\n--- REGISTRO DE GASTO ---")
     placa = input("Ingrese la placa del vehículo: ").upper()
